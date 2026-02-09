@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="page-nav" id="page-nav">
+        <button class="nav-dot" onclick="goToPage(1)" title="Welcome"></button>
+        <button class="nav-dot" onclick="goToPage(2)" title="Albert FM"></button>
+        <button class="nav-dot" onclick="goToPage(3)" title="Game"></button>
+        <button class="nav-dot" onclick="goToPage(4)" title="Gift"></button>
+        <button class="nav-dot" onclick="goToPage(5)" title="Letter"></button>
+    </nav>
+
+    <!-- PAGE 1 - WELCOME -->
+    <div id="page-1" class="page active">
+        <!-- Confetti Container -->
+        <div id="confetti-container"></div>
+        
+        <!-- Balloons Container -->
+        <div class="balloons" id="balloons-container"></div>
+        
+        <div class="page-content center">
+            <div class="welcome-content fade-in-up">
+                <h1 class="mega-title gradient-text">HAPPY BIRTHDAY</h1>
+                <h2 class="large-title">ALBERT</h2>
+                <p class="subtitle">I made you little something something. I hope you enjoy it!🙈</p>
+                <p class="subtitle">click the note button and groove with me a little 💃🏽 🕺🏽</p>
+                <button class="btn-primary pulse" onclick="goToPage(2)">Start</button>
+                
+                <!-- Music Control -->
+                <button class="music-toggle" id="music-toggle" onclick="toggleBirthdayMusic()">
+                    <svg id="music-on" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                    </svg>
+                    <svg id="music-off" width="24" height="24" viewBox="0 0 24 24" fill="white" style="display: none;">
+                        <path d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73L19.73 21 21 19.73 4.27 3zM14 7h4V3h-6v5.18l2 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Hidden audio element -->
+        <audio id="birthday-audio" loop>
+            <source src="Spur Birthday Song - The Campbells  Spur Songs.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- PAGE 2 - ALBERT FM -->
+    <div id="page-2" class="page">
+        <div class="page-content">
+            <div class="fm-container fade-in-up">
+                <div class="fm-header">
+                    <div class="live-indicator">
+                        <div class="live-dot"></div>
+                        <h2 class="page-title">ALBERT FM 📻</h2>
+                    </div>
+                    <p class="fm-tagline">Live. No ads. Just bangers.</p>
+                    <p class="fm-sub">Curated with love.</p>
+                </div>
+
+                <!-- Vinyl Record Player -->
+                <div class="glass player-card">
+                    <div class="vinyl-player">
+                        <div class="vinyl-record" id="vinyl-record">
+                            <div class="vinyl-label">
+                                <div class="vinyl-center"></div>
+                            </div>
+                        </div>
+                        <div class="tonearm" id="tonearm"></div>
+                    </div>
+
+                    <div class="player-controls">
+                        <div class="controls-left">
+                            <button class="play-btn" id="play-btn-fm" onclick="toggleMusicFM()">
+                                <svg id="play-icon-fm" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                <svg id="pause-icon-fm" width="28" height="28" viewBox="0 0 24 24" fill="white" style="display: none;">
+                                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                </svg>
+                            </button>
+                            
+                            <!-- Equalizer -->
+                            <div class="equalizer" id="equalizer-fm" style="display: none;">
+                                <div class="eq-bar"></div>
+                                <div class="eq-bar"></div>
+                                <div class="eq-bar"></div>
+                                <div class="eq-bar"></div>
+                                <div class="eq-bar"></div>
+                            </div>
+                        </div>
+
+                        <button class="glass-btn" onclick="toggleSoundFM()">
+                            <svg id="volume-on-fm" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                            </svg>
+                            <svg id="volume-off-fm" width="24" height="24" viewBox="0 0 24 24" fill="white" style="display: none;">
+                                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Apple Music Embed -->
+                    <div class="music-embed">
+                        <iframe 
+                            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
+                            frameborder="0" 
+                            height="450" 
+                            style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" 
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+                            src="https://embed.music.apple.com/za/playlist/hbd/pl.u-GgA5ARRTaAZody">
+                        </iframe>
+                    </div>
+                </div>
+
+                <button class="btn-primary center-btn" onclick="goToPage(3)">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3 - MINI GAME -->
+    <div id="page-3" class="page">
+        <div class="page-content center">
+            <div class="game-container fade-in-up">
+                <h2 class="page-title">Catch the Gifts!</h2>
+                <p class="subtitle">Move your mouse/finger to catch falling presents</p>
+
+                <div class="glass game-card">
+                    <div id="game-start">
+                        <button class="btn-primary" onclick="startGame()">Start Game</button>
+                    </div>
+
+                    <div id="game-active" style="display: none;">
+                        <div class="game-stats">
+                            <div class="stat">
+                                <span class="stat-label">Score:</span>
+                                <span class="stat-value" id="score">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Time:</span>
+                                <span class="stat-value" id="timer">20</span>
+                            </div>
+                        </div>
+                        <canvas id="game-canvas" width="400" height="500"></canvas>
+                    </div>
+
+                    <div id="game-complete" style="display: none;">
+                        <div class="game-emoji">🎉</div>
+                        <h3 class="game-win-text">Amazing!</h3>
+                        <p class="game-final-score">You caught <span id="final-score">0</span> gifts!</p>
+                        <button class="btn-primary glow" onclick="goToPage(4)">Claim Your Prize</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4 - GIFT CARD REVEAL -->
+    <div id="page-4" class="page gift-page">
+        <!-- Celebration Overlay -->
+        <div class="gift-celebration">
+            <!-- Burst effects added dynamically -->
+        </div>
+        
+        <div class="page-content center">
+            <div class="gift-container fade-in-up">
+                <div id="scratch-section">
+                    <div class="gift-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2">
+                            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                            <rect x="2" y="7" width="20" height="5"></rect>
+                            <line x1="12" y1="22" x2="12" y2="7"></line>
+                            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="page-title">🎁 UNLOCKED</h2>
+                    <p class="subtitle">Scratch to reveal your gift</p>
+                    
+                    <div class="scratch-container">
+                        <canvas id="scratch-canvas" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <div id="revealed-section" style="display: none;">
+                    <div class="glass gift-card glow">
+                        <h2 class="gift-amount">$$$</h2>
+                        <p class="gift-title">Amazon Gift Card</p>
+                        <p class="gift-subtitle">Please go and treat yourself!😝</p>
+                        <div class="gift-link"> 
+                            <button class="btn-primary full-width" onclick="window.open('https://www.amazon.com/g/MSSKZZD6BQE3AZ?t=SvL', '_blank')"> REDEEM YOUR GIFT🎁</button>
+                        </div>
+                        <p class="gift-note">with ❤️</p>
+                    </div>
+
+                    <button class="btn-primary full-width" onclick="window.open('https://amazon.com', '_blank')">Go Shop</button>
+                    <button class="skip-btn" onclick="goToPage(5)">Skip to letter →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5 - LETTER -->
+    <div id="page-5" class="page">
+        <div class="page-content">
+            <div class="letter-container">
+                <p class="letter-intro fade-in-up">Deep from my heart</p>
+
+                <div class="letter-content">
+                    <p class="letter-paragraph">My sweet darling Albert,</p>
+
+                    <p class="letter-paragraph">You know my love, 21 is such a meaningful milestone and achievement in one's life. You might be thinking, “Oh it's just another year, another number. What's the big deal?” But I remember us wondering what 21 truly represents, and when I found out, it felt so fitting for you.</p>
+
+                    <p class="letter-paragraph">In the days of knights, 21 was the age they were finally deemed strong enough to wear a full suit of armour and carry the weight of a sword. It marked the moment they stepped out of apprenticeship and into their own power. And as I look at you today, I see that same transition so clearly. You've always had the heart of a protector, but at 21, you're stepping into your own armour, growing into the man God is shaping you to be.</p>
+
+                    <p class="letter-paragraph">What I love most is the way you go about life. The thought you put into the world around you, the quiet strength you carry, the kindness you show so naturally. You move with so much intention, with humility, and with such a genuine heart. It's such a sight to see! I truly believe God's hand is over you, guiding your steps, and I feel incredibly blessed and proud to witness it and walk beside you.</p>
+
+                    <p class="letter-paragraph">You are such an amazing, kind-hearted, and loving person that I often find myself sitting in quiet awe just thinking about you. Thank you for being you my love.</p>
+
+                    <p class="letter-paragraph">I hope today feels super special. I hope this year brings you everything you're working toward and more. And I hope you know, really know, how loved you are.</p>
+
+                    <div class="letter-space"></div>
+
+                    <p class="letter-final">I love you! ❤️</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
